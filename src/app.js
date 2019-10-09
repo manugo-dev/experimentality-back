@@ -4,9 +4,12 @@ import cors from 'cors';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import dotenv from 'dotenv';
 
 import mainRouter from './routes';
 import * as config from './config/config';
+
+dotenv.config(path.join(__dirname, '/.env'));
 
 const app = express();
 
@@ -16,6 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
+
+// Main Application Router
 app.use(config.prefixRoutes, mainRouter);
 
 // catch 404 and forward to error handler
