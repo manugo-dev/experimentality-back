@@ -9,7 +9,6 @@ import session from 'express-session';
 
 import initMongoose from './services/database-service';
 import initRoutes from './routes/index';
-import * as config from './config/config';
 
 const app = express();
 
