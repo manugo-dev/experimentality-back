@@ -17,15 +17,19 @@ const getAuthToken = (req, res, next) => {
 
 const checkIfAuthenticated = (req, res, next) => {
   getAuthToken(req, res, async () => {
-    try {
+    if (req) {
       const { authToken } = req;
-      const userInfo = await admin.auth().verifyIdToken(authToken);
-      req.authId = userInfo.uid;
-      return next();
-    } catch (e) {
-      return res
-        .status(401)
-        .send({ error: 'You are not authorized to make this request' });
+      admin
+        .auth()
+        .verifyIdToken(authToken)
+        .then(decodedToken => {
+          const userInfo = decodedToken;
+          req.authId = userInfo.uid;
+          return next();
+        })
+        .catch(errorData => {
+          return res.status(401).send({ error: `Not authorized` });
+        });
     }
   });
 };
