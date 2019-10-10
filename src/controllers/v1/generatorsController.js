@@ -54,7 +54,7 @@ class generatorsController {
     const { quote, image } = quoteWithImage;
     quotesModel.create({ quote, image }, (saveErr, savedQuote) => {
       if (saveErr) {
-        return res.status(500).send(saveErr);
+        return res.status(500).send({ error: saveErr });
       }
       const responseJSON = {
         // eslint-disable-next-line no-underscore-dangle

@@ -8,11 +8,11 @@ const router = express.Router();
 router.get('/all:page?:per_page?', quotesController.getAll);
 
 // Ged quote by ID endpoint
-router.get('/quote:id', quotesController.get);
+router.get('/quote/:id', quotesController.get);
 
 // Remove quote endpoint
 router.delete(
-  '/remove-quote:id',
+  '/remove-quote/:id',
   checkIfAuthenticated,
   quotesController.remove,
 );
