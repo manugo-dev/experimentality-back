@@ -3,6 +3,10 @@
     "es6": true,
     "node": true
   },
+  "parserOptions": {
+    "sourceType": "module",
+    "parser": "babel-eslint"
+  },
   "extends": ["airbnb-base", "plugin:prettier/recommended"],
   "globals": {
     "Atomics": "readonly",
@@ -12,11 +16,19 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "rules": { "import/no-unresolved": [2, { "caseSensitive": false }] },
+  "rules": {
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never"
+      }
+    ]
+  },
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["./src"]
+        "extensions": [".js", ".jsx", ".ts"]
       }
     }
   }
