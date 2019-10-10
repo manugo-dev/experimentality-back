@@ -14,11 +14,6 @@
   },
   "rules": {},
   "settings": {
-    "import/ignore": ["firebase-admin"],
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
+    "import/no-unresolved": "off"
   }
 }
