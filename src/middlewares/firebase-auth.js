@@ -27,7 +27,8 @@ const checkIfAuthenticated = (req, res, next) => {
           req.authId = userInfo.uid;
           return next();
         })
-        .catch(errorData => {
+        .catch(e => {
+          console.error(e);
           return res.status(401).send({ error: `Not authorized` });
         });
     }
