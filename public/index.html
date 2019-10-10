@@ -104,10 +104,10 @@
 
         document.querySelector('.showToken').addEventListener('click', () => {
             if (dataBox.style.display === "none") {
-                dataBox.innerHTML = "Hide token";
+                document.querySelector('.loginButton').innerHTML = "Hide token";
                 dataBox.style.display = "block";
             } else {
-                dataBox.innerHTML = "Show token";
+                document.querySelector('.loginButton').innerHTML = "Show token";
                 dataBox.style.display = "none";
             }
         });
