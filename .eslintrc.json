@@ -12,8 +12,5 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "rules": {},
-  "settings": {
-    "import/no-unresolved": "off"
-  }
+  "rules": { "import/no-unresolved": [2, { "caseSensitive": false }] }
 }
