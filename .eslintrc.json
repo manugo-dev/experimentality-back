@@ -13,5 +13,13 @@
     "sourceType": "module"
   },
   "rules": {},
-  "settings": { "import/ignore": ["firebase-admin"], "import/resolver": "node" }
+  "settings": {
+    "import/ignore": ["firebase-admin"],
+    "import/resolver": {
+      "alias": {
+        "map": [["src", "./src"]],
+        "extensions": [".js", ".css", ".scss"]
+      }
+    }
+  }
 }
