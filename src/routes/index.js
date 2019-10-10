@@ -13,18 +13,18 @@ router.get('/:name?', (req, res) => {
 });
 
 // Remove quote endpoint
-router.get('/allQuotes', async (req, res) => {
-  return res.send(`El que quieres eliminar es el id ${req.body.id}`);
+router.get('/allQuotes', (req, res) => {
+  return res.send(`Sending all quotes`);
 });
 
 // Edit quote endpoint
-router.put('/editQuote', async (req, res) => {
+router.put('/editQuote', (req, res) => {
   return res.send(req.body.id);
 });
 
 // Remove quote endpoint
 router.delete('/removeQuote', checkIfAuthenticated, async (req, res) => {
-  return res.send(`El que quieres eliminar es el id ${req.body.id}`);
+  return res.send(`Quote to be removed: ${req.body.id}`);
 });
 
 export default router;

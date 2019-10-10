@@ -5,7 +5,10 @@ const getAuthToken = (req, res, next) => {
     req.headers.authorization &&
     req.headers.authorization.split(' ')[0] === 'Bearer'
   ) {
-    req.authToken = req.headers.authorization.split(' ')[1];
+    req.authToken = req.headers.authorization
+      .split(' ')
+      .slice(1, 2)
+      .toString();
   } else {
     req.authToken = null;
   }
@@ -16,8 +19,6 @@ const checkIfAuthenticated = (req, res, next) => {
   getAuthToken(req, res, async () => {
     try {
       const { authToken } = req;
-
-      console.log(admin.auth().verifyIdToken(authToken));
       const userInfo = await admin.auth().verifyIdToken(authToken);
       req.authId = userInfo.uid;
       return next();

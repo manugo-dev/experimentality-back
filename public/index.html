@@ -20,7 +20,7 @@
     <div class="content">
         <div class="content_buttons">
             <button type="button" class="loginButton content__button btn btn-outline-danger">LogIn With Google</button>
-            <button id="showToken" type="button" class="showToken content__button btn btn-outline-danger">Display
+            <button id="showToken" type="button" class="showToken content__button btn btn-outline-danger">Show
                 Token</button>
         </div>
         <div class="content__token" style="display:none;">Here will be the token</div>
@@ -104,8 +104,10 @@
 
         document.querySelector('.showToken').addEventListener('click', () => {
             if (dataBox.style.display === "none") {
+                dataBox.innerHTML = "Hide token";
                 dataBox.style.display = "block";
             } else {
+                dataBox.innerHTML = "Show token";
                 dataBox.style.display = "none";
             }
         });
