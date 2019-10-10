@@ -23,7 +23,7 @@
             <button id="showToken" type="button" class="showToken content__button btn btn-outline-danger">Show
                 Token</button>
         </div>
-        <div class="content__token" style="display:none;">Here will be the token</div>
+        <div class="content__token hideDiv">Here will be the token</div>
     </div>
 
 
@@ -102,15 +102,7 @@
             }
         });
 
-        document.querySelector('.showToken').addEventListener('click', () => {
-            if (dataBox.style.display === "none") {
-                document.querySelector('.showToken').innerHTML = "Hide token";
-                dataBox.style.display = "block";
-            } else {
-                document.querySelector('.showToken').innerHTML = "Show token";
-                dataBox.style.display = "none";
-            }
-        });
+        document.querySelector('.showToken').addEventListener('click', () => dataBox.classList.toggle("showDiv"));
 
         const signOut = () => {
             firebase.auth().signOut().then(function () {

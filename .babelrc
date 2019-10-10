@@ -6,6 +6,12 @@
       {
         "regenerator": true
       }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
     ]
   ]
 }

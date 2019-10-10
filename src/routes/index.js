@@ -1,30 +1,7 @@
-import express from 'express';
-import checkIfAuthenticated from '../middlewares/firebase-auth';
+import routerV1 from './v1/index';
 
-const router = express.Router();
+const initRoutes = app => {
+  app.use('/api/v1', routerV1);
+};
 
-/* Homepage. */
-router.get('/:name?', (req, res) => {
-  res.send(
-    `Hi ${
-      req.query.name ? req.query.name : 'friend'
-    }, Welcome to Experimentality.`,
-  );
-});
-
-// Remove quote endpoint
-router.get('/allQuotes', (req, res) => {
-  return res.send(`Sending all quotes`);
-});
-
-// Edit quote endpoint
-router.put('/editQuote', (req, res) => {
-  return res.send(req.body.id);
-});
-
-// Remove quote endpoint
-router.delete('/removeQuote', checkIfAuthenticated, async (req, res) => {
-  return res.send(`Quote to be removed: ${req.body.id}`);
-});
-
-export default router;
+export default initRoutes;
