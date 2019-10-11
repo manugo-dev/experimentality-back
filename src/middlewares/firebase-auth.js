@@ -13,7 +13,7 @@ const getAuthToken = (req, res, next) => {
     req.authToken = null;
     return res.status(401).send({ error: `Not auth token provided` });
   }
-  next();
+  return next();
 };
 
 const checkIfAuthenticated = (req, res, next) => {
