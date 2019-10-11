@@ -60,10 +60,9 @@ const removeQuote = async reference => {
 };
 
 const renderQuote = async data => {
-  const { id, quote, image } = data;
-  document.querySelector('.quote__id').innerText = `ID: ${id}`;
-  document.querySelector('.quote__text').innerText = quote;
-  document.querySelector('.quote__image').src = image;
+  document.querySelector('.quote__id').innerText = `ID: ${data.id}`;
+  document.querySelector('.quote__text').innerText = data.quote;
+  document.querySelector('.quote__image').src = data.image;
 };
 
 const generateNewQuote = async () => {
