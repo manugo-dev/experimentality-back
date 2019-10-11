@@ -47,11 +47,11 @@ const removeQuote = async reference => {
     method: 'DELETE',
     url: `${server}/api/v1/remove-quote/${reference}`,
     headers: {
-      Authorization: `bearer ${bearerToken}`,
+      Authorization: `Bearer ${bearerToken}`,
     },
   })
-    .then(data => {
-      toastr.success(`Removed: ${data}`);
+    .then(res => {
+      toastr.success(`Removed: ${JSON.stringify(res.data.removed.quote)}`);
     })
     .catch(error => {
       toastr.error(error);
