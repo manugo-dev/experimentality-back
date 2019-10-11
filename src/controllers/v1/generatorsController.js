@@ -44,6 +44,7 @@ class generatorsController {
   static async randomQuoteWithImage() {
     const quote = await generatorsController.getRandomQuote('famous', 1);
     const image = await generatorsController.getImageFromContext(quote, 1);
+    // eslint disable-next-line
     return { quote, image };
   }
 
