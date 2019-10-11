@@ -14,7 +14,6 @@
 
 - [Quick start](#quick-start)
 - [Endpoints](#endpoints)
-- [Folder structure](#folder-structure)
 - [Status](#status)
 
 ## Quick start
