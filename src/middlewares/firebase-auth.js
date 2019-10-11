@@ -11,6 +11,7 @@ const getAuthToken = (req, res, next) => {
       .toString();
   } else {
     req.authToken = null;
+    return res.status(401).send({ error: `Not auth token provided` });
   }
   next();
 };
