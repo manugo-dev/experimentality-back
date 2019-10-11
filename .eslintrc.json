@@ -14,12 +14,6 @@
   },
   "rules": { "import/no-unresolved": "off" },
   "settings": {
-    "import/ignore": ["firebase-admin"],
-    "import/resolver": {
-      "alias": {
-        "map": [["src", "./src"]],
-        "extensions": [".js", ".css", ".scss"]
-      }
-    }
+    "import/ignore": ["firebase-admin"]
   }
 }

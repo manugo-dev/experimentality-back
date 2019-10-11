@@ -20,7 +20,8 @@
     <div class="content">
         <div class="content_buttons">
             <button type="button" class="loginButton content__button btn btn-outline-danger">LogIn With Google</button>
-            <button id="showToken" type="button" class="showToken content__button btn btn-outline-danger">Show
+            <button id="showToken" type="button"
+                class="showToken content__button content__button--show btn btn-outline-danger">Show
                 Token</button>
         </div>
         <div class="content__token hideDiv">Here will be the token</div>
@@ -102,7 +103,12 @@
             }
         });
 
-        document.querySelector('.showToken').addEventListener('click', () => dataBox.classList.toggle("showDiv"));
+        document.querySelector('.showToken').addEventListener('click', () => {
+            if (dataBox.classList.contains("showDiv")) document.querySelector('.showToken').innerHTML =
+                "Hide token";
+            else document.querySelector('.showToken').innerHTML = "Show token";
+            dataBox.classList.toggle("showDiv")
+        });
 
         const signOut = () => {
             firebase.auth().signOut().then(function () {

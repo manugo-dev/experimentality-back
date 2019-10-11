@@ -44,7 +44,9 @@ class quotesController {
           });
         }
         if (!response) {
-          return res.status(204).send({ error: 'Nothing to be removed' });
+          return res.status(409).send({
+            error: 'Not content found',
+          });
         }
         return res.status(200).send({ removed: response });
       },
