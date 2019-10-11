@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable consistent-return */
 import quotesModel from '../../models/quotesModel';
 
@@ -25,9 +26,11 @@ class quotesController {
           .send({ error: 'Error searching this value on database' });
       }
       if (!quote) {
-        return res.status(204).sendJSON({ error: 'No content' });
+        return res.status(410).send({ error: 'No content' });
       }
-      return res.status(200).send(quote);
+      return res
+        .status(200)
+        .send({ id: quote._id, quote: quote.quote, image: quote.image });
     });
   }
 
@@ -44,7 +47,9 @@ class quotesController {
           });
         }
         if (!response) {
-          return res.status(204).send({ error: 'Nothing to be removed' });
+          return res.status(409).send({
+            error: 'Not content found',
+          });
         }
         return res.status(200).send({ removed: response });
       },

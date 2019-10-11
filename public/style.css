@@ -25,13 +25,62 @@ body {
 }
 
 .hideDiv {
+    margin: 0;
+    padding: 0;
     visibility: hidden;
+    max-height: 0;
     opacity: 0;
-    transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+    transition: all 0s linear 0.3s, opacity 0.3s ease-in-out;
 }
 
 .showDiv {
+    padding: 20px;
+    margin: 30px;
+    display: block;
+    max-height: 100%;
     visibility: visible;
     opacity: 1;
     transition-delay: 0s;
+}
+
+.content__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#content__quote {
+    flex: 6;
+    width: 100%;
+    margin: 30px;
+    padding: 0;
+}
+
+.content__aside {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.quote__image img {
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+    .content__row {
+        flex-direction: column;
+    }
+
+    #content__quote {
+        margin: 0;
+        margin-top: 30px;
+    }
 }

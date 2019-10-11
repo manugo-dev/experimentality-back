@@ -5,9 +5,13 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import helmet from 'helmet';
+import session from 'express-session';
+import mongoose from 'mongoose';
 
 import initMongoose from './services/database-service';
 import initRoutes from './routes/index';
+
+const MongoStore = require('connect-mongo')(session);
 
 const app = express();
 
@@ -23,6 +27,17 @@ initMongoose();
 
 // v1 Router Endpoints
 initRoutes(app);
+
+app.use(
+  session({
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    resave: true,
+    saveUninitialized: true,
+    secret: process.env.SESSION_SECRET
+      ? process.env.SESSION_SECRET
+      : 'exPsecr3t',
+  }),
+);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
