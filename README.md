@@ -12,23 +12,23 @@
 
 ## Table of contents
 
--  [Quick start](#quick-start)
--  [Endpoints](#endpoints)
--  [Folder structure](#folder-structure)
--  [Status](#status)
+-   [Quick start](#quick-start)
+-   [Endpoints](#endpoints)
+-   [Folder structure](#folder-structure)
+-   [Status](#status)
 
 ## Quick start
 
 This application has been deploy with CodeShip on Heroku
 
--  <https://experimentality-back.herokuapp.com>
+-   <https://experimentality-back.herokuapp.com>
 
 ## Endpoints
 
--  [/api/v1/generate-changing-life-quote][1] GET random quote with image
--  [/api/v1/all][2] GET all quotes saved on database
--  [/api/v1/quote/id][3] GET quote by id
--  [/api/v1/remove-quote/id][4] DELETE quote by id
+-   [/api/v1/generate-changing-life-quote][1] GET random quote with image
+-   [/api/v1/all][2] GET all quotes saved on database
+-   [/api/v1/quote/id][3] GET quote by id
+-   [/api/v1/remove-quote/id][4] DELETE quote by id
 
 ## Status
 
