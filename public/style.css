@@ -65,12 +65,9 @@ body {
     margin-top: 30px;
 }
 
-.quote__image img {
-    width: 300px;
-    height: 300px;
-    max-width: 100%;
-    max-height: 300px;
-    border-radius: 50%;
+.quote__image {
+    height: 600px;
+    object-fit: cover;
     overflow: hidden;
 }
 
