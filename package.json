@@ -40,7 +40,7 @@
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
-    "firebase-admin": "^8.6.0",
+    "firebase-admin": "^11.4.1",
     "nodemon": "^1.19.3",
     "prettier": "^1.18.2"
   },
@@ -58,7 +58,7 @@
     "eslint-import-resolver-node": "^0.3.2",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
-    "firebase-admin": "^8.6.0",
+    "firebase-admin": "^11.4.1",
     "helmet": "^3.21.1",
     "http-errors": "^1.6.3",
     "mongoose": "^5.7.4",
